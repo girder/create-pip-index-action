@@ -1,0 +1,21 @@
+name: 'gh-pages-pip-index-action'
+description: 'Create a custom pip package index.'
+author: 'Bane Sullivan <@banesullivan>'
+inputs:
+  package_directory:
+    description: 'Path to the directory containing the wheels/packages. A new index.html file will be placed in this direcory.'
+    required: true
+branding:
+  icon: 'package'
+  color: 'blue'
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Make package index file
+      shell: bash
+      run: |
+        python ${{ github.action_path }}/make_index.py ${{ inputs.package_directory }}
