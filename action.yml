@@ -1,4 +1,4 @@
-name: 'gh-pages-pip-index-action'
+name: 'create-pip-index-action'
 description: 'Create a custom pip package index.'
 author: 'Bane Sullivan <@banesullivan>'
 inputs:
