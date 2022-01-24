@@ -28,7 +28,7 @@ def get_sha256(name):
     return sha256.hexdigest()
 
 
-wheels = [(name, name) for name in os.listdir(path) if name.endswith("whl")]
+wheels = [(name, name) for name in os.listdir(path) if name.endswith(".whl") or name.endswith(".tar.gz")]
 
 wheels = sorted(wheels)
 maxnamelen = max(len(name) for name, url in wheels)
