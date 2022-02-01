@@ -5,7 +5,8 @@ import time
 
 path = "gh-pages" if len(sys.argv) == 1 else sys.argv[1]
 indexName = "index.html"
-template = """<html>
+template = """<!DOCTYPE html>
+<html>
 <head><title>Package Index</title></head>
 <body>
 <h1>Package Index</h1>
