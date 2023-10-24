@@ -6,7 +6,7 @@ Use the Action:
 
 ```yml
 - name: Make package index
-  uses: banesullivan/create-pip-index-action@main
+  uses: girder/create-pip-index-action@main
   with:
     package_directory: dist/
 ```
@@ -37,7 +37,7 @@ jobs:
           pip install wheel
           python setup.py bdist_wheel
       - name: Make package index
-        uses: banesullivan/create-pip-index-action@main
+        uses: girder/create-pip-index-action@main
         with:
           package_directory: dist/
       - name: Deploy to GH Pages
