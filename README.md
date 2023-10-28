@@ -6,7 +6,7 @@ Use the Action:
 
 ```yml
 - name: Make package index
-  uses: banesullivan/create-pip-index-action@main
+  uses: girder/create-pip-index-action@main
   with:
     package_directory: dist/
 ```
@@ -27,9 +27,9 @@ jobs:
     name: Publish Wheel to GH Pages
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: "3.8"
       - name: Build Weel
@@ -37,7 +37,7 @@ jobs:
           pip install wheel
           python setup.py bdist_wheel
       - name: Make package index
-        uses: banesullivan/create-pip-index-action@main
+        uses: girder/create-pip-index-action@main
         with:
           package_directory: dist/
       - name: Deploy to GH Pages
